@@ -1,90 +1,17 @@
-[alias]
-	# Info
-	s  = status
-	ss = status --short
-	sb = status --short --branch
-	b  = branch
-	ba = branch --all
-	d  = diff -w
-	dd = diff
-	dn = diff --numstat
-	# Logging madness
-	l  = log --pretty=format:'%h %Cred%ad%Creset%d %s %Cblue[%an]' --date short -10
-	ll = log --pretty=format:'%h %Cred%ad%Creset%d %s %Cblue[%an]' --date short
-	lg = log --pretty=format:'%h %Cred%ad %Cblue[%an]%Creset%d %s' --date short --graph
-	lo = log --oneline --decorate
-	ln = log --oneline --decorate --numstat
-	lp = log --patch
-	# Manage commits
-	a  = add --verbose
-	ap = add --verbose --patch
-	aa = add --verbose --all
-	au = add --verbose --update
-	ai = add --verbose --interactive
-	c  = commit --verbose --message
-	ca = commit --verbose --all --message
-	cm = commit --amend
-	cp = cherry-pick
-	ri = rebase --interactive
-	rc = rebase --continue
-	ra = rebase --abort
-	rs = rebase --skip
-	# Change
-	r   = reset
-	co  = checkout
-	rh  = reset --hard
-	st  = stash
-	stl = stash list
-	sta = stash apply
-	sts = stash --keep-index
-	pop = stash pop
-
-	# grep
-	g = grep -Ii
-	gf = "!git ls-files | grep -i"
-	gp = "!git config --list | grep -i"
-
-[core]
-	autocrlf = false
-	safecrlf = false
-	editor = /usr/bin/vim
-	excludesfile = ~/.gitignore
-	pager=less --quit-if-one-screen --RAW-CONTROL-CHARS --no-init
-	trustctime = false
-
-# PUSH/PULL/DIFF/OPTS
-[push]
-	default = upstream
-[pull]
-	default = current
-[diff]
-	memonicprefix = true
-[branch]
-	autosetuprebase = always
-[apply]
-	whitespace = nowarn
-
-# DIFTOOLS
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-
-# COLOR
 [color]
 	ui          = true
 	branch      = true
 	diff        = true
 	interactive = true
 	status      = true
+
 [color "branch"]
 	; current  = ; the current branch
 	; local    = ; a local branch
 	; remote   = ; a remote-tracking branch in refs/remotes/
 	; upstream = ; upstream tracking branch
 	; plain    = ; other refs
+
 [color "diff"]
 	; plain      = white dim     ; context text
 	; meta       = white         ; metainformation
@@ -94,11 +21,13 @@
 	; new        = green         ; added lines
 	; commit     = yellow        ; commit headers
 	; whitespace = white reverse ; highlighting whitespace errors
+
 [color "decorate"]
 	; branch       =
 	; remoteBranch =
 	; tag          =
 	; stash        =
+
 [color "grep"]
 	; context       = ; non-matching text in context lines (when using -A, -B, or -C)
 	; filename      = ; filename prefix (when not using -h)
@@ -109,11 +38,13 @@
 	; matchSelected = ; matching text in selected lines
 	; selected      = ; non-matching text in selected lines
 	; separator     = ; separators between fields on a line (:, -, and =) and between hunks (--)
+
 [color "interactive"]
 	; prompt =
 	; header =
 	; help   =
 	; error  =
+
 [color "status"]
 	; header      =       ; the header text of the status message
 	; added       = yellow

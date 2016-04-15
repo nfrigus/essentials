@@ -1,0 +1,30 @@
+[core]
+	autocrlf = false
+	safecrlf = false
+	editor = /usr/bin/vim
+	excludesfile = ~/.gitignore
+	pager=less --quit-if-one-screen --RAW-CONTROL-CHARS --no-init
+	trustctime = false
+
+[push]
+	default = upstream
+
+[pull]
+	default = current
+
+[diff]
+	memonicprefix = true
+
+[branch]
+	autosetuprebase = always
+
+[apply]
+	whitespace = nowarn
+
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

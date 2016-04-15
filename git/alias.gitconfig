@@ -1,0 +1,49 @@
+[alias]
+
+	# Info
+	s  = status
+	ss = status --short
+	sb = status --short --branch
+	b  = branch
+	ba = branch --all
+	d  = diff -w
+	dd = diff
+	dn = diff --numstat
+
+	# Logging madness
+	l  = log --pretty=format:'%h %Cred%ad%Creset%d %s %Cblue[%an]' --date short -10
+	ll = log --pretty=format:'%h %Cred%ad%Creset%d %s %Cblue[%an]' --date short
+	lg = log --pretty=format:'%h %Cred%ad %Cblue[%an]%Creset%d %s' --date short --graph
+	lo = log --oneline --decorate
+	ln = log --oneline --decorate --numstat
+	lp = log --patch
+
+	# Manage commits
+	a  = add --verbose
+	ap = add --verbose --patch
+	aa = add --verbose --all
+	au = add --verbose --update
+	ai = add --verbose --interactive
+	c  = commit --verbose --message
+	ca = commit --verbose --all --message
+	cm = commit --amend
+	cp = cherry-pick
+	ri = rebase --interactive
+	rc = rebase --continue
+	ra = rebase --abort
+	rs = rebase --skip
+
+	# Change
+	r   = reset
+	co  = checkout
+	rh  = reset --hard
+	st  = stash
+	stl = stash list
+	sta = stash apply
+	sts = stash --keep-index
+	pop = stash pop
+
+	# grep
+	g = grep -Ii
+	gf = "!git ls-files | grep -i"
+	gp = "!git config --list | grep -i"
