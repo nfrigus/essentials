@@ -18,8 +18,7 @@ RUN yum install \
         php70u-mysqlnd \
         php70u-pdo \
         php70u-xml \
-    -y || true
-RUN mkdir -p /var/www/html /var/log/httpd
+    -y
 
 RUN yum install -y less vim-tiny
 RUN php -r "readfile('https://getcomposer.org/installer');" | php -- --filename=composer --install-dir=/usr/local/bin
