@@ -41,9 +41,8 @@
   cos = symbolic-ref HEAD
   st  = stash --keep-index
   stu = stash --keep-index --include-untracked
-  stu = stash --all
+  sta = stash --all
   stl = stash list
-  sta = stash apply
   pop = stash pop
 
   # grep
