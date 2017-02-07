@@ -6,19 +6,23 @@
   sb = status --short --branch
   b  = branch
   ba = branch --all
+  bc = branch --all --contains
   d  = diff -w
   dd = diff
   dn = diff --numstat
+  cos = symbolic-ref HEAD
 
-  # Logging madness
-  l  = log --pretty=format:'%h %Cred%ad%Creset%d %s %Cblue[%an]' --date short -10
-  ll = log --pretty=format:'%h %Cred%ad%Creset%d %s %Cblue[%an]' --date short
-  lg = log --pretty=format:'%h %Cred%ad %Cblue[%an]%Creset%d %s' --date short --graph
-  ln = log --pretty=format:'%h %Cred%ad %Cblue[%an]%Creset%d %s' --date short --numstat
+  # Logging
+  log-authors = log --pretty=format:'%h %Cred%ad %Cblue[%an]%Creset%d %s'
+  log-oneline = log --pretty=format:'%h %Cred%ad%Creset%d %s %Cblue[%an]'
+  l  = !git log-oneline --date short -10
+  ll = !git log-oneline --date short
+  lg = !git log-authors --date short --graph
+  ln = !git log-authors --date short --numstat
   lo = log --oneline --decorate
   lp = log --patch
 
-  # Manage commits
+  # Committing
   a  = add --verbose
   aa = add --verbose --all
   ai = add --verbose --interactive
@@ -27,32 +31,39 @@
   c  = commit --verbose --message
   ca = commit --verbose --all --message
   cm = commit --amend
+
+  # Manage commits
   cp  = cherry-pick
+  cpc = cherry-pick --continue
   cpa = cherry-pick --abort
-  fa = fetch --all
   ra = rebase --abort
   rc = rebase --continue
   ri = rebase --interactive
 
-  # Change
+  # Remote
+  rl = remote --verbose
+  rp = remote prune
+  fa = fetch --all
+
+  # Manage state
   r   = reset
   rh  = reset --hard
   co  = checkout
-  cob = checkout --branch
-  cos = symbolic-ref HEAD
+  cb  = checkout --branch
   st  = stash --keep-index
   stu = stash --keep-index --include-untracked
   sta = stash --all
   stl = stash list
   pop = stash pop
 
-  # grep
+  # Search
   g = grep -Ii
   gf = "!git ls-files | grep -i"      # search filename
   gp = "!git config --list | grep -i" # search config
 
-  # Misc
+  # Init repo
   it = !git init && git commit -m root --allow-empty
 
+  # Misc
   ls = ls-files
   wt = worktree
