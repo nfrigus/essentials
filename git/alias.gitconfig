@@ -14,24 +14,25 @@
   l  = log --pretty=format:'%h %Cred%ad%Creset%d %s %Cblue[%an]' --date short -10
   ll = log --pretty=format:'%h %Cred%ad%Creset%d %s %Cblue[%an]' --date short
   lg = log --pretty=format:'%h %Cred%ad %Cblue[%an]%Creset%d %s' --date short --graph
+  ln = log --pretty=format:'%h %Cred%ad %Cblue[%an]%Creset%d %s' --date short --numstat
   lo = log --oneline --decorate
-  ln = log --oneline --decorate --numstat
   lp = log --patch
 
   # Manage commits
   a  = add --verbose
-  ap = add --verbose --patch
   aa = add --verbose --all
-  au = add --verbose --update
   ai = add --verbose --interactive
+  ap = add --verbose --patch
+  au = add --verbose --update
   c  = commit --verbose --message
   ca = commit --verbose --all --message
   cm = commit --amend
-  ri = rebase --interactive
-  rc = rebase --continue
-  ra = rebase --abort
   cp  = cherry-pick
   cpa = cherry-pick --abort
+  fa = fetch --all
+  ra = rebase --abort
+  rc = rebase --continue
+  ri = rebase --interactive
 
   # Change
   r   = reset
