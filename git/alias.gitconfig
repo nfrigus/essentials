@@ -57,14 +57,14 @@
   stl = stash list
   pop = stash pop
 
-  # Search
-  g = grep -Ii
-  gf = "!git ls-files | grep -i"      # search filename
-  gp = "!git config --list | grep -i" # search config
+  # Config (Parameters)
+  alias = config --get-regexp ^alias
+  pg = config --get-regex
 
   # Init repo
   it = !git init && git commit -m root --allow-empty
 
   # Misc
+  g = grep -Ii
   ls = ls-files
   wt = worktree
