@@ -7,10 +7,11 @@
   b  = branch
   ba = branch --all
   bc = branch --all --contains
-  d  = diff -w
+  d  = diff --ignore-all-space
   dd = diff
   dn = diff --numstat
-  cos = symbolic-ref HEAD
+  bn = rev-parse --abbrev-ref HEAD
+  bnf = symbolic-ref HEAD
 
   # Logging
   log-authors = log --pretty=format:'%h %Cred%ad %Cblue[%an]%Creset%d %s'
