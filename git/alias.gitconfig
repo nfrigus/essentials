@@ -52,3 +52,6 @@
 
   # Misc
   it = !git init && git commit -m root --allow-empty
+
+  ls = ls-files
+  wt = worktree
